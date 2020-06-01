@@ -24,7 +24,7 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Language from "@material-ui/icons/Language";
 import People from "@material-ui/icons/People";
-import PowerSettingsNew from "@material-ui/icons/PowerSettingsNew";
+import CollectionsBookmarkIcon from "@material-ui/icons/CollectionsBookmark";
 import Forum from "@material-ui/icons/Forum";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
@@ -35,8 +35,9 @@ import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
-import LogOut from "views/LogOut/LogOut.js";
 import WPBlog from "views/WPBlog/WPBlog.js";
+import Tutorials from "views/Tutorials/Tutorials.js";
+import UXLayoutBuilder from "views/UXLayoutBuilder/UXLayoutBuilder.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
 
@@ -47,7 +48,21 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
-    layout: "/admin"
+    layout: "/admin",
+  },
+  {
+    path: "/layout-build",
+    name: "UX Layout Builder",
+    icon: CollectionsBookmarkIcon,
+    component: UXLayoutBuilder,
+    layout: "/ux",
+  },
+  {
+    path: "/tutorials",
+    name: "Tutorials",
+    icon: CollectionsBookmarkIcon,
+    component: Tutorials,
+    layout: "/admin",
   },
   {
     path: "/user",
@@ -55,7 +70,7 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/table",
@@ -63,7 +78,7 @@ const dashboardRoutes = [
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/typography",
@@ -71,7 +86,7 @@ const dashboardRoutes = [
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/icons",
@@ -79,7 +94,7 @@ const dashboardRoutes = [
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/maps",
@@ -87,7 +102,7 @@ const dashboardRoutes = [
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/notifications",
@@ -95,7 +110,7 @@ const dashboardRoutes = [
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/rtl-page",
@@ -104,7 +119,7 @@ const dashboardRoutes = [
     icon: Language,
     component: RTLPage,
     layout: "/rtl",
-    invisible: true
+    invisible: true,
   },
   {
     path: "/all-users",
@@ -114,19 +129,12 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/logout",
-    name: "Log Out",
-    icon: PowerSettingsNew,
-    component: LogOut,
-    layout: "/state"
-  },
-  {
     path: "/wp-blog",
     name: "WP Blog",
     icon: Forum,
     component: WPBlog,
-    layout: "/admin"
-  }
+    layout: "/admin",
+  },
 ];
 
 export default dashboardRoutes;
