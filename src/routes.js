@@ -26,6 +26,7 @@ import Language from "@material-ui/icons/Language";
 import People from "@material-ui/icons/People";
 import CollectionsBookmarkIcon from "@material-ui/icons/CollectionsBookmark";
 import Forum from "@material-ui/icons/Forum";
+import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
@@ -53,7 +54,7 @@ const dashboardRoutes = [
   {
     path: "/layout-build",
     name: "UX Layout Builder",
-    icon: CollectionsBookmarkIcon,
+    icon: AspectRatioIcon,
     component: UXLayoutBuilder,
     layout: "/ux",
   },

@@ -86,13 +86,13 @@ class Tutorials extends Component {
     console.log("Total Boxes: ", totalBoxes);
   };
 
-  handleSort = () => {
-    const counters = [...this.state.counters];
-    counters.sort(function(a, b) {
-      if (b.id < a.id) return -1;
-    });
-    this.setState({ counters });
-  };
+  //   handleSort = () => {
+  //     const counters = [...this.state.counters];
+  //     counters.sort(function(a, b) {
+  //       if (b.id < a.id) return -1;
+  //     });
+  //     this.setState({ counters });
+  //   };
 
   // -- End of Lifted State Functions -- //
 }
