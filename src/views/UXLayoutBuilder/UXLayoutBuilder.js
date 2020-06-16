@@ -35,7 +35,7 @@ class UXLayoutMain extends Component {
         return <Nav3 heroSelected={this.props.heroSelected} />;
       }
 
-      return <h2>Select a Nav Type to begin!</h2>;
+      return <h2>Select a Page Navigation to begin!</h2>;
     };
 
     return (

@@ -1,4 +1,8 @@
 /* All CSS Screen Sizes */
+#ux-panel1 .MuiFormControlLabel-root {
+  margin-bottom: -11px;
+}
+
 #ux-panel2 button:focus {
   outline: none;
 }
