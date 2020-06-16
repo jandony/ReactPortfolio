@@ -1,0 +1,22 @@
+/* All CSS Screen Sizes */
+#ux-panel2 button:focus {
+  outline: none;
+}
+
+/* Mobile CSS */
+@media screen and (max-width: 600px) {
+  #iconBtnContainer {
+    text-align: center;
+  }
+  #callToActionBtns {
+    text-align: center;
+  }
+}
+
+/* Tablet CSS */
+@media screen and (min-width: 600px) {
+}
+
+/* Laptop CSS */
+@media screen and (min-width: 960px) {
+}

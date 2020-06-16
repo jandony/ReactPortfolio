@@ -23,15 +23,16 @@ class UXLayoutMain extends Component {
   render() {
     const ShowNav = () => {
       if (this.props.navSelected === 1) {
-        return <Nav1 />;
+        console.log(this.props);
+        return <Nav1 heroSelected={this.props.heroSelected} />;
       }
 
       if (this.props.navSelected === 2) {
-        return <Nav2 />;
+        return <Nav2 heroSelected={this.props.heroSelected} />;
       }
 
       if (this.props.navSelected === 3) {
-        return <Nav3 />;
+        return <Nav3 heroSelected={this.props.heroSelected} />;
       }
 
       return <h2>Select a Nav Type to begin!</h2>;
@@ -52,31 +53,10 @@ class UXLayoutMain extends Component {
         {/* DOM */}
         <Box mt={5}>
           <ShowNav />
-          {this.props.heroSelected === 1 && <Hero1 />}
-          {this.props.heroSelected === 2 && <Hero2 />}
-          {this.props.heroSelected === 3 && <Hero3 />}
         </Box>
       </React.Fragment>
     );
   }
-
-  toggleHero1 = () => {
-    this.setState({
-      Hero1: !this.state.Hero1,
-    });
-  };
-
-  toggleHero2 = () => {
-    this.setState({
-      Hero2: !this.state.Hero2,
-    });
-  };
-
-  toggleHero3 = () => {
-    this.setState({
-      Hero3: !this.state.Hero3,
-    });
-  };
 }
 
 export default UXLayoutMain;

@@ -16,11 +16,6 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
-// Nav components
-import Nav1 from "../Navbars/Nav1";
-import Nav2 from "../Navbars/Nav2";
-import Nav3 from "../Navbars/Nav3";
-
 // @material-ui/icons
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
@@ -69,11 +64,11 @@ export default function Sidebar(props) {
         padding: 20,
       }}
     >
-      {/* <Button type="button" href="/" fullWidth="true" color="info">
+      <Button type="button" href="/" fullWidth="true" color="info">
         <ArrowBackIcon />
         Back to Dashboard
       </Button>
-      <div>
+      {/* <div>
         Header 1:
         <Switch checked={hero1} onChange={props.toggleHero1} />
       </div>
@@ -82,7 +77,7 @@ export default function Sidebar(props) {
         <Switch checked={hero2} onChange={props.toggleHero2} />
       </div>
       <div>
-        Header 3:
+        Header 3
         <Switch checked={hero3} onChange={props.toggleHero3} />
       </div> */}
 
@@ -108,10 +103,10 @@ export default function Sidebar(props) {
         </Select>
       </FormControl> */}
 
-      <h3>Nav Type:</h3>
+      <h3>1-Nav Type</h3>
       <FormControl style={{ width: "100%" }} id={navSelected}>
         <InputLabel id="nav-select-label" style={{ color: "white" }}>
-          1 - Select a Nav
+          Select a Nav
         </InputLabel>
         <Select
           labelId="nav-select-label"
@@ -123,16 +118,15 @@ export default function Sidebar(props) {
           <MenuItem value="None">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={1}>Nav 1</MenuItem>
-          <MenuItem value={2}>Nav 2</MenuItem>
-          <MenuItem value={3}>Nav 3</MenuItem>
+          <MenuItem value={1}>Top Nav</MenuItem>
+          <MenuItem value={2}>Left Nav</MenuItem>
         </Select>
       </FormControl>
 
-      <h3>Hero Type:</h3>
+      <h3>2-Hero</h3>
       <FormControl style={{ width: "100%" }} id={heroSelected}>
         <InputLabel id="hero-select-label" style={{ color: "white" }}>
-          2 - Select a Hero
+          Select a Hero
         </InputLabel>
         <Select
           labelId="hero-select-label"

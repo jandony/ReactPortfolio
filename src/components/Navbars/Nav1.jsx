@@ -20,6 +20,11 @@ import Paper from "@material-ui/core/Paper";
 
 // Custom components
 
+// Hero components
+import Hero1 from "../../components/Hero/Hero1";
+import Hero2 from "../../components/Hero/Hero2";
+import Hero3 from "../../components/Hero/Hero3";
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -84,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Nav1() {
+const Nav1 = (props) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -169,7 +174,7 @@ export default function Nav1() {
   return (
     <Paper style={{ height: "100vh" }}>
       <div className={classes.grow}>
-        <AppBar position="static">
+        <AppBar position="static" style={{ backgroundColor: "#555" }}>
           <Toolbar>
             <IconButton
               edge="start"
@@ -180,7 +185,7 @@ export default function Nav1() {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              Material-UI
+              Top Navigation
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -237,6 +242,11 @@ export default function Nav1() {
         {renderMobileMenu}
         {renderMenu}
       </div>
+      {props.heroSelected === 1 && <Hero1 />}
+      {props.heroSelected === 2 && <Hero2 />}
+      {props.heroSelected === 3 && <Hero3 />}
     </Paper>
   );
-}
+};
+
+export default Nav1;
