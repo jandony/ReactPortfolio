@@ -12,6 +12,7 @@ const HowItWorks0 = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        marginBottom: "50px",
       }}
     >
       <h1 class={{ color: "white" }}> How It Works </h1>

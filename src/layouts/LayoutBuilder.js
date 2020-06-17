@@ -96,6 +96,32 @@ export default function UXLayoutBuilder({ ...rest }) {
   const selectFeatures = (event) => {
     setFeatures(event.target.value);
   };
+
+  // ---------------------------------
+  // Testimonial section
+  // ---------------------------------
+  const [testimonialSection, setTestimonialSection] = React.useState(false);
+  const toggleTestimonialSection = () => {
+    setTestimonialSection(!testimonialSection);
+  };
+  // Testimonial select
+  const [testimonialSelected, setTestimonial] = React.useState(0);
+  const selectTestimonial = (event) => {
+    setTestimonial(event.target.value);
+  };
+
+  // ---------------------------------
+  // Portfolio section
+  // ---------------------------------
+  const [portfolioSection, setPortfolioSection] = React.useState(false);
+  const togglePortfolioSection = () => {
+    setPortfolioSection(!portfolioSection);
+  };
+  // Portfolioselect
+  const [portfolioSelected, setPortfolio] = React.useState(0);
+  const selectPortfolio = (event) => {
+    setPortfolio(event.target.value);
+  };
   // ---------------------------------
 
   const getRoute = () => {
@@ -150,6 +176,14 @@ export default function UXLayoutBuilder({ ...rest }) {
           selectFeatures={selectFeatures}
           featuresSection={featuresSection}
           toggleFeaturesSection={toggleFeaturesSection}
+          testimonialSelected={testimonialSelected}
+          selectTestimonial={selectTestimonial}
+          testimonialSection={testimonialSection}
+          toggleTestimonialSection={toggleTestimonialSection}
+          portfolioSelected={portfolioSelected}
+          selectPortfolio={selectPortfolio}
+          portfolioSection={portfolioSection}
+          togglePortfolioSection={togglePortfolioSection}
           {...rest}
         />
       </div>
@@ -171,6 +205,10 @@ export default function UXLayoutBuilder({ ...rest }) {
                 hiwSection={hiwSection}
                 featuresSelected={featuresSelected}
                 featuresSection={featuresSection}
+                testimonialSelected={testimonialSelected}
+                testimonialSection={testimonialSection}
+                portfolioSelected={portfolioSelected}
+                portfolioSection={portfolioSection}
               />
             </div>
           </div>

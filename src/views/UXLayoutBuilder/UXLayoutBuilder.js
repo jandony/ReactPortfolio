@@ -27,6 +27,10 @@ class UXLayoutMain extends Component {
             hiwSection={this.props.hiwSection}
             featuresSelected={this.props.featuresSelected}
             featuresSection={this.props.featuresSection}
+            testimonialSelected={this.props.testimonialSelected}
+            testimonialSection={this.props.testimonialSection}
+            portfolioSelected={this.props.portfolioSelected}
+            portfolioSection={this.props.portfolioSection}
           />
         );
       }
@@ -40,6 +44,10 @@ class UXLayoutMain extends Component {
             hiwSection={this.props.hiwSection}
             featuresSelected={this.props.featuresSelected}
             featuresSection={this.props.featuresSection}
+            testimonialSelected={this.props.testimonialSelected}
+            testimonialSection={this.props.testimonialSection}
+            portfolioSelected={this.props.portfolioSelected}
+            portfolioSection={this.props.portfolioSection}
           />
         );
       }

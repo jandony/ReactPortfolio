@@ -67,6 +67,10 @@ export default function Sidebar(props) {
     hiwSection,
     featuresSelected,
     featuresSection,
+    testimonialSelected,
+    testimonialSection,
+    portfolioSelected,
+    portfolioSection,
   } = props;
 
   var brand = (
@@ -170,12 +174,12 @@ export default function Sidebar(props) {
                 />
               }
             />
-            {/* <FormControlLabel
+            <FormControlLabel
               label="(d) Testimonials"
               control={
                 <Checkbox
-                  checked="false"
-                  onChange={handleChange}
+                  checked={props.testimonialSection}
+                  onChange={props.toggleTestimonialSection}
                   name="testimonialsD"
                   color="secondary"
                 />
@@ -185,14 +189,14 @@ export default function Sidebar(props) {
               label="(e) Portfolio"
               control={
                 <Checkbox
-                  checked="false"
-                  onChange={handleChange}
+                  checked={props.portfolioSection}
+                  onChange={props.togglePortfolioSection}
                   name="portfolioE"
                   color="secondary"
                 />
               }
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               label="(f) Login"
               control={
                 <Checkbox
@@ -332,6 +336,58 @@ export default function Sidebar(props) {
                 <MenuItem value={1}>Features 1</MenuItem>
                 <MenuItem value={2}>Features 2</MenuItem>
                 <MenuItem value={3}>Features 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {testimonialSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={testimonialSelected}
+            >
+              <InputLabel id="testimonials-select-label">
+                Testimonial Layouts:
+              </InputLabel>
+              <Select
+                labelId="testimonials-select-label"
+                id="testimonials-select"
+                value={testimonialSelected}
+                onChange={props.selectTestimonial}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Testimonial 1</MenuItem>
+                <MenuItem value={2}>Testimonial 2</MenuItem>
+                <MenuItem value={3}>Testimonial 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {portfolioSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={portfolioSelected}
+            >
+              <InputLabel id="portfolio-select-label">
+                Portfolio Layouts:
+              </InputLabel>
+              <Select
+                labelId="portfolio-select-label"
+                id="portfolio-select"
+                value={portfolioSelected}
+                onChange={props.selectPortfolio}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Portfolio 1</MenuItem>
+                <MenuItem value={2}>Portfolio 2</MenuItem>
+                <MenuItem value={3}>Portfolio 3</MenuItem>
               </Select>
             </FormControl>
           )}

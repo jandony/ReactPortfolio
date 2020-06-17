@@ -3,7 +3,7 @@ import React from "react";
 // Material UI components
 import Paper from "@material-ui/core/Paper";
 
-const Hero0 = () => {
+const Portfolio0 = () => {
   return (
     <Paper
       style={{
@@ -15,9 +15,9 @@ const Hero0 = () => {
         marginBottom: "50px",
       }}
     >
-      <h1 class={{ color: "white" }}> Hero </h1>
+      <h1 class={{ color: "white" }}> Portfolio </h1>
     </Paper>
   );
 };
 
-export default Hero0;
+export default Portfolio0;

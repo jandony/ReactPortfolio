@@ -39,7 +39,17 @@ import Features2 from "../../components/Features/Features2";
 import Features3 from "../../components/Features/Features3";
 
 // Testimonials components
+import Testimonials0 from "../../components/Testimonials/Testimonials0";
+import Testimonials1 from "../../components/Testimonials/Testimonials1";
+import Testimonials2 from "../../components/Testimonials/Testimonials2";
+import Testimonials3 from "../../components/Testimonials/Testimonials3";
+
 // Portfolio components
+import Portfolio0 from "../../components/Portfolio/Portfolio0";
+import Portfolio1 from "../../components/Portfolio/Portfolio1";
+import Portfolio2 from "../../components/Portfolio/Portfolio2";
+import Portfolio3 from "../../components/Portfolio/Portfolio3";
+
 // Login components
 // Team components
 // Pricing components
@@ -208,13 +218,13 @@ function ResponsiveDrawer(props) {
           {props.heroSection && props.heroSelected === 1 && <Hero1 />}
           {props.heroSection && props.heroSelected === 2 && <Hero2 />}
           {props.heroSection && props.heroSelected === 3 && <Hero3 />}
-          <br />
+
           {/* DOM => How It Works Layouts */}
           {props.hiwSection && props.hiwSelected === 0 && <HowItWorks0 />}
           {props.hiwSection && props.hiwSelected === 1 && <HowItWorks1 />}
           {props.hiwSection && props.hiwSelected === 2 && <HowItWorks2 />}
           {props.hiwSection && props.hiwSelected === 3 && <HowItWorks3 />}
-          <br />
+
           {/* DOM => Features Layouts */}
           {props.featuresSection && props.featuresSelected === 0 && (
             <Features0 />
@@ -228,21 +238,43 @@ function ResponsiveDrawer(props) {
           {props.featuresSection && props.featuresSelected === 3 && (
             <Features3 />
           )}
-          <br />
+
           {/* DOM => Testimonials Layouts */}
-          <br />
+          {props.testimonialSection && props.testimonialSelected === 0 && (
+            <Testimonials0 />
+          )}
+          {props.testimonialSection && props.testimonialSelected === 1 && (
+            <Testimonials1 />
+          )}
+          {props.testimonialSection && props.testimonialSelected === 2 && (
+            <Testimonials2 />
+          )}
+          {props.testimonialSection && props.testimonialSelected === 3 && (
+            <Testimonials3 />
+          )}
+
           {/* DOM => Portfolio Layouts */}
-          <br />
+          {props.portfolioSection && props.portfolioSelected === 0 && (
+            <Portfolio0 />
+          )}
+          {props.portfolioSection && props.portfolioSelected === 1 && (
+            <Portfolio1 />
+          )}
+          {props.portfolioSection && props.portfolioSelected === 2 && (
+            <Portfolio2 />
+          )}
+          {props.portfolioSection && props.portfolioSelected === 3 && (
+            <Portfolio3 />
+          )}
           {/* DOM => Login Layouts */}
-          <br />
+
           {/* DOM => Team Layouts */}
-          <br />
+
           {/* DOM => Pricing Layouts */}
-          <br />
+
           {/* DOM => Contact Layouts */}
-          <br />
+
           {/* DOM => Footer Layouts */}
-          <br />
         </main>
       </div>
     </Paper>
