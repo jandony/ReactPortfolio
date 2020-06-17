@@ -71,6 +71,8 @@ export default function Sidebar(props) {
     testimonialSection,
     portfolioSelected,
     portfolioSection,
+    loginSelected,
+    loginSection,
   } = props;
 
   var brand = (
@@ -196,18 +198,18 @@ export default function Sidebar(props) {
                 />
               }
             />
-            {/* <FormControlLabel
+            <FormControlLabel
               label="(f) Login"
               control={
                 <Checkbox
-                  checked="false"
-                  onChange={handleChange}
+                  checked={props.loginSection}
+                  onChange={props.toggleLoginSection}
                   name="loginF"
                   color="secondary"
                 />
               }
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               label="(g) Team"
               control={
                 <Checkbox
@@ -388,6 +390,30 @@ export default function Sidebar(props) {
                 <MenuItem value={1}>Portfolio 1</MenuItem>
                 <MenuItem value={2}>Portfolio 2</MenuItem>
                 <MenuItem value={3}>Portfolio 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {loginSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={loginSelected}
+            >
+              <InputLabel id="login-select-label">Login Layouts:</InputLabel>
+              <Select
+                labelId="login-select-label"
+                id="login-select"
+                value={loginSelected}
+                onChange={props.selectLogin}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Login 1</MenuItem>
+                <MenuItem value={2}>Login 2</MenuItem>
+                <MenuItem value={3}>Login 3</MenuItem>
               </Select>
             </FormControl>
           )}

@@ -117,13 +117,26 @@ export default function UXLayoutBuilder({ ...rest }) {
   const togglePortfolioSection = () => {
     setPortfolioSection(!portfolioSection);
   };
-  // Portfolioselect
+  // Portfolio select
   const [portfolioSelected, setPortfolio] = React.useState(0);
   const selectPortfolio = (event) => {
     setPortfolio(event.target.value);
   };
-  // ---------------------------------
 
+  // ---------------------------------
+  // Login section
+  // ---------------------------------
+  const [loginSection, setLoginSection] = React.useState(false);
+  const toggleLoginSection = () => {
+    setLoginSection(!loginSection);
+  };
+  //Login select
+  const [loginSelected, setLogin] = React.useState(0);
+  const selectLogin = (event) => {
+    setLogin(event.target.value);
+  };
+
+  // ---------------------------------
   const getRoute = () => {
     return window.location.pathname !== "/admin/maps";
   };
@@ -184,6 +197,10 @@ export default function UXLayoutBuilder({ ...rest }) {
           selectPortfolio={selectPortfolio}
           portfolioSection={portfolioSection}
           togglePortfolioSection={togglePortfolioSection}
+          loginSelected={loginSelected}
+          selectLogin={selectLogin}
+          loginSection={loginSection}
+          toggleLoginSection={toggleLoginSection}
           {...rest}
         />
       </div>
@@ -209,6 +226,8 @@ export default function UXLayoutBuilder({ ...rest }) {
                 testimonialSection={testimonialSection}
                 portfolioSelected={portfolioSelected}
                 portfolioSection={portfolioSection}
+                loginSelected={loginSelected}
+                loginSection={loginSection}
               />
             </div>
           </div>

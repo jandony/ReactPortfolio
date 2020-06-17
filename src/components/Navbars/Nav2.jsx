@@ -51,6 +51,11 @@ import Portfolio2 from "../../components/Portfolio/Portfolio2";
 import Portfolio3 from "../../components/Portfolio/Portfolio3";
 
 // Login components
+import Login0 from "../../components/Login/Login0";
+import Login1 from "../../components/Login/Login1";
+import Login2 from "../../components/Login/Login2";
+import Login3 from "../../components/Login/Login3";
+
 // Team components
 // Pricing components
 // Contact components
@@ -267,6 +272,10 @@ function ResponsiveDrawer(props) {
             <Portfolio3 />
           )}
           {/* DOM => Login Layouts */}
+          {props.loginSection && props.loginSelected === 0 && <Login0 />}
+          {props.loginSection && props.loginSelected === 1 && <Login1 />}
+          {props.loginSection && props.loginSelected === 2 && <Login2 />}
+          {props.loginSection && props.loginSelected === 3 && <Login3 />}
 
           {/* DOM => Team Layouts */}
 

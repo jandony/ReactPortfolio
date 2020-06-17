@@ -31,6 +31,8 @@ class UXLayoutMain extends Component {
             testimonialSection={this.props.testimonialSection}
             portfolioSelected={this.props.portfolioSelected}
             portfolioSection={this.props.portfolioSection}
+            loginSelected={this.props.loginSelected}
+            loginSection={this.props.loginSection}
           />
         );
       }
@@ -48,6 +50,8 @@ class UXLayoutMain extends Component {
             testimonialSection={this.props.testimonialSection}
             portfolioSelected={this.props.portfolioSelected}
             portfolioSection={this.props.portfolioSection}
+            loginSelected={this.props.loginSelected}
+            loginSection={this.props.loginSection}
           />
         );
       }
