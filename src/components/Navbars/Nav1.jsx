@@ -57,9 +57,28 @@ import Login2 from "../../components/Login/Login2";
 import Login3 from "../../components/Login/Login3";
 
 // Team components
+import Team0 from "../../components/Team/Team0";
+import Team1 from "../../components/Team/Team1";
+import Team2 from "../../components/Team/Team2";
+import Team3 from "../../components/Team/Team3";
+
 // Pricing components
+import Pricing0 from "../../components/Pricing/Pricing0";
+import Pricing1 from "../../components/Pricing/Pricing1";
+import Pricing2 from "../../components/Pricing/Pricing2";
+import Pricing3 from "../../components/Pricing/Pricing3";
+
 // Contact components
+import Contact0 from "../../components/Contact/Contact0";
+import Contact1 from "../../components/Contact/Contact1";
+import Contact2 from "../../components/Contact/Contact2";
+import Contact3 from "../../components/Contact/Contact3";
+
 // Footer components
+import Footer0 from "../../components/Footer/Footer0";
+import Footer1 from "../../components/Footer/Footer1";
+import Footer2 from "../../components/Footer/Footer2";
+import Footer3 from "../../components/Footer/Footer3";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -325,6 +344,7 @@ const Nav1 = (props) => {
       {props.portfolioSection && props.portfolioSelected === 3 && (
         <Portfolio3 />
       )}
+
       {/* DOM => Login Layouts */}
       {props.loginSection && props.loginSelected === 0 && <Login0 />}
       {props.loginSection && props.loginSelected === 1 && <Login1 />}
@@ -332,9 +352,28 @@ const Nav1 = (props) => {
       {props.loginSection && props.loginSelected === 3 && <Login3 />}
 
       {/* DOM => Team Layouts */}
+      {props.teamSection && props.teamSelected === 0 && <Team0 />}
+      {props.teamSection && props.teamSelected === 1 && <Team1 />}
+      {props.teamSection && props.teamSelected === 2 && <Team2 />}
+      {props.teamSection && props.teamSelected === 3 && <Team3 />}
+
       {/* DOM => Pricing Layouts */}
+      {props.pricingSection && props.pricingSelected === 0 && <Pricing0 />}
+      {props.pricingSection && props.pricingSelected === 1 && <Pricing1 />}
+      {props.pricingSection && props.pricingSelected === 2 && <Pricing2 />}
+      {props.pricingSection && props.pricingSelected === 3 && <Pricing3 />}
+
       {/* DOM => Contact Layouts */}
+      {props.contactSection && props.contactSelected === 0 && <Contact0 />}
+      {props.contactSection && props.contactSelected === 1 && <Contact1 />}
+      {props.contactSection && props.contactSelected === 2 && <Contact2 />}
+      {props.contactSection && props.contactSelected === 3 && <Contact3 />}
+
       {/* DOM => Footer Layouts */}
+      {props.footerSection && props.footerSelected === 0 && <Footer0 />}
+      {props.footerSection && props.footerSelected === 1 && <Footer1 />}
+      {props.footerSection && props.footerSelected === 2 && <Footer2 />}
+      {props.footerSection && props.footerSelected === 3 && <Footer3 />}
     </Paper>
   );
 };

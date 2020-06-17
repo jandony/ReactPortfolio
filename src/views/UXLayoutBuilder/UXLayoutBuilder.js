@@ -33,6 +33,15 @@ class UXLayoutMain extends Component {
             portfolioSection={this.props.portfolioSection}
             loginSelected={this.props.loginSelected}
             loginSection={this.props.loginSection}
+            
+            teamSelected={this.props.teamSelected}
+            teamSection={this.props.teamSection}
+            pricingSelected={this.props.pricingSelected}
+            pricingSection={this.props.pricingSection}
+            contactSelected={this.props.contactSelected}
+            contactSection={this.props.contactSection}
+            footerSelected={this.props.footerSelected}
+            footerSection={this.props.footerSection}
           />
         );
       }
@@ -52,6 +61,14 @@ class UXLayoutMain extends Component {
             portfolioSection={this.props.portfolioSection}
             loginSelected={this.props.loginSelected}
             loginSection={this.props.loginSection}
+            teamSelected={this.props.teamSelected}
+            teamSection={this.props.teamSection}
+            pricingSelected={this.props.pricingSelected}
+            pricingSection={this.props.pricingSection}
+            contactSelected={this.props.contactSelected}
+            contactSection={this.props.contactSection}
+            footerSelected={this.props.footerSelected}
+            footerSection={this.props.footerSection}
           />
         );
       }

@@ -130,10 +130,62 @@ export default function UXLayoutBuilder({ ...rest }) {
   const toggleLoginSection = () => {
     setLoginSection(!loginSection);
   };
-  //Login select
+  // Login select
   const [loginSelected, setLogin] = React.useState(0);
   const selectLogin = (event) => {
     setLogin(event.target.value);
+  };
+
+  // ---------------------------------
+  // Team section
+  // ---------------------------------
+  const [teamSection, setTeamSection] = React.useState(false);
+  const toggleTeamSection = () => {
+    setTeamSection(!teamSection);
+  };
+  // Team select
+  const [teamSelected, setTeam] = React.useState(0);
+  const selectTeam = (event) => {
+    setTeam(event.target.value);
+  };
+
+  // ---------------------------------
+  // Pricing section
+  // ---------------------------------
+  const [pricingSection, setPricingSection] = React.useState(false);
+  const togglePricingSection = () => {
+    setPricingSection(!pricingSection);
+  };
+  // Pricing select
+  const [pricingSelected, setPricing] = React.useState(0);
+  const selectPricing = (event) => {
+    setPricing(event.target.value);
+  };
+
+  // ---------------------------------
+  // Contact section
+  // ---------------------------------
+  const [contactSection, setContactSection] = React.useState(false);
+  const toggleContactSection = () => {
+    setContactSection(!contactSection);
+  };
+  // Contact select
+  const [contactSelected, setContact] = React.useState(0);
+  const selectContact = (event) => {
+    setContact(event.target.value);
+  };
+
+  // ---------------------------------
+  // Footer section
+  // ---------------------------------
+  const [footerSection, setFooterSection] = React.useState(false);
+  const toggleFooterSection = () => {
+    setFooterSection(!footerSection);
+  };
+  // Footer select
+  const [footerSelected, setFooter] = React.useState(0);
+  const selectFooter = (event) => {
+    setFooter(event.target.value);
   };
 
   // ---------------------------------
@@ -201,6 +253,22 @@ export default function UXLayoutBuilder({ ...rest }) {
           selectLogin={selectLogin}
           loginSection={loginSection}
           toggleLoginSection={toggleLoginSection}
+          teamSelected={teamSelected}
+          selectTeam={selectTeam}
+          teamSection={teamSection}
+          toggleTeamSection={toggleTeamSection}
+          pricingSelected={pricingSelected}
+          selectPricing={selectPricing}
+          pricingSection={pricingSection}
+          togglePricingSection={togglePricingSection}
+          contactSelected={contactSelected}
+          selectContact={selectContact}
+          contactSection={contactSection}
+          toggleContactSection={toggleContactSection}
+          footerSelected={footerSelected}
+          selectFooter={selectFooter}
+          footerSection={footerSection}
+          toggleFooterSection={toggleFooterSection}
           {...rest}
         />
       </div>
@@ -228,6 +296,14 @@ export default function UXLayoutBuilder({ ...rest }) {
                 portfolioSection={portfolioSection}
                 loginSelected={loginSelected}
                 loginSection={loginSection}
+                teamSelected={teamSelected}
+                teamSection={teamSection}
+                pricingSelected={pricingSelected}
+                pricingSection={pricingSection}
+                contactSelected={contactSelected}
+                contactSection={contactSection}
+                footerSelected={footerSelected}
+                footerSection={footerSection}
               />
             </div>
           </div>

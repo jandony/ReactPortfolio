@@ -73,6 +73,14 @@ export default function Sidebar(props) {
     portfolioSection,
     loginSelected,
     loginSection,
+    teamSelected,
+    teamSection,
+    pricingSelected,
+    pricingSection,
+    contactSelected,
+    contactSection,
+    footerSelected,
+    footerSection,
   } = props;
 
   var brand = (
@@ -209,12 +217,12 @@ export default function Sidebar(props) {
                 />
               }
             />
-            {/* <FormControlLabel
+            <FormControlLabel
               label="(g) Team"
               control={
                 <Checkbox
-                  checked="false"
-                  onChange={handleChange}
+                  checked={props.teamSection}
+                  onChange={props.toggleTeamSection}
                   name="teamG"
                   color="secondary"
                 />
@@ -224,8 +232,8 @@ export default function Sidebar(props) {
               label="(h) Pricing"
               control={
                 <Checkbox
-                  checked="false"
-                  onChange={handleChange}
+                  checked={props.pricingSection}
+                  onChange={props.togglePricingSection}
                   name="pricingH"
                   color="secondary"
                 />
@@ -235,8 +243,8 @@ export default function Sidebar(props) {
               label="(i) Contact"
               control={
                 <Checkbox
-                  checked="false"
-                  onChange={handleChange}
+                  checked={props.contactSection}
+                  onChange={props.toggleContactSection}
                   name="contactI"
                   color="secondary"
                 />
@@ -246,13 +254,13 @@ export default function Sidebar(props) {
               label="(j) Footer"
               control={
                 <Checkbox
-                  checked="false"
-                  onChange={handleChange}
+                  checked={props.footerSection}
+                  onChange={props.toggleFooterSection}
                   name="footerJ"
                   color="secondary"
                 />
               }
-            /> */}
+            />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -418,6 +426,106 @@ export default function Sidebar(props) {
             </FormControl>
           )}
         </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {teamSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={teamSelected}
+            >
+              <InputLabel id="team-select-label">Team Layouts:</InputLabel>
+              <Select
+                labelId="team-select-label"
+                id="team-select"
+                value={teamSelected}
+                onChange={props.selectTeam}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Team 1</MenuItem>
+                <MenuItem value={2}>Team 2</MenuItem>
+                <MenuItem value={3}>Team 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {pricingSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={pricingSelected}
+            >
+              <InputLabel id="pricing-select-label">
+                Pricing Layouts:
+              </InputLabel>
+              <Select
+                labelId="pricing-select-label"
+                id="pricing-select"
+                value={pricingSelected}
+                onChange={props.selectPricing}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Pricing 1</MenuItem>
+                <MenuItem value={2}>Pricing 2</MenuItem>
+                <MenuItem value={3}>Pricing 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {contactSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={contactSelected}
+            >
+              <InputLabel id="contact-select-label">
+                Contact Layouts:
+              </InputLabel>
+              <Select
+                labelId="contact-select-label"
+                id="contact-select"
+                value={contactSelected}
+                onChange={props.selectContact}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Contact 1</MenuItem>
+                <MenuItem value={2}>Contact 2</MenuItem>
+                <MenuItem value={3}>Contact 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {footerSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={footerSelected}
+            >
+              <InputLabel id="footer-select-label">Footer Layouts:</InputLabel>
+              <Select
+                labelId="footer-select-label"
+                id="footer-select"
+                value={footerSelected}
+                onChange={props.selectFooter}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Footer 1</MenuItem>
+                <MenuItem value={2}>Footer 2</MenuItem>
+                <MenuItem value={3}>Footer 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
         expanded={expanded === "panel4"}
@@ -431,10 +539,7 @@ export default function Sidebar(props) {
           <Typography>4. Components</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
+          <Typography>Your component options will show here...</Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
@@ -449,10 +554,7 @@ export default function Sidebar(props) {
           <Typography>5. Functions</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
+          <Typography>Your website functions will show here...</Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
 
