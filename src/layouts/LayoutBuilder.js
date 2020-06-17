@@ -50,30 +50,53 @@ export default function UXLayoutBuilder({ ...rest }) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const [hero1, setHero1] = React.useState(false);
-  const toggleHero1 = () => {
-    setHero1(!hero1);
-  };
-  const [hero2, setHero2] = React.useState(false);
-  const toggleHero2 = () => {
-    setHero2(!hero2);
-  };
-  const [hero3, setHero3] = React.useState(false);
-  const toggleHero3 = () => {
-    setHero3(!hero3);
-  };
 
+  // Nav options
   const [navSelected, setNav] = React.useState(null);
   const selectNav = (event) => {
     setNav(event.target.value);
-    console.log(event.target.value);
+    // console.log(event.target.value);
   };
 
-  const [heroSelected, setHero] = React.useState(null);
+  // ---------------------------------
+  // Hero section
+  // ---------------------------------
+  const [heroSection, setHeroSection] = React.useState(false);
+  const toggleHeroSection = () => {
+    setHeroSection(!heroSection);
+  };
+  // Hero select
+  const [heroSelected, setHero] = React.useState(0);
   const selectHero = (event) => {
     setHero(event.target.value);
-    console.log(event.target.value);
   };
+
+  // ---------------------------------
+  // How It Works section
+  // ---------------------------------
+  const [hiwSection, setHIWSection] = React.useState(false);
+  const toggleHIWSection = () => {
+    setHIWSection(!hiwSection);
+  };
+  // How It Works select
+  const [hiwSelected, setHIW] = React.useState(0);
+  const selectHIW = (event) => {
+    setHIW(event.target.value);
+  };
+
+  // ---------------------------------
+  // Features section
+  // ---------------------------------
+  const [featuresSection, setFeaturesSection] = React.useState(false);
+  const toggleFeaturesSection = () => {
+    setFeaturesSection(!featuresSection);
+  };
+  // Features select
+  const [featuresSelected, setFeatures] = React.useState(0);
+  const selectFeatures = (event) => {
+    setFeatures(event.target.value);
+  };
+  // ---------------------------------
 
   const getRoute = () => {
     return window.location.pathname !== "/admin/maps";
@@ -113,16 +136,20 @@ export default function UXLayoutBuilder({ ...rest }) {
           handleDrawerToggle={handleDrawerToggle}
           open={mobileOpen}
           color={color}
-          hero1={hero1}
-          toggleHero1={toggleHero1}
-          hero2={hero2}
-          toggleHero2={toggleHero2}
-          hero3={hero3}
-          toggleHero3={toggleHero3}
           navSelected={navSelected}
           selectNav={selectNav}
           heroSelected={heroSelected}
           selectHero={selectHero}
+          heroSection={heroSection}
+          toggleHeroSection={toggleHeroSection}
+          hiwSelected={hiwSelected}
+          selectHIW={selectHIW}
+          hiwSection={hiwSection}
+          toggleHIWSection={toggleHIWSection}
+          featuresSelected={featuresSelected}
+          selectFeatures={selectFeatures}
+          featuresSection={featuresSection}
+          toggleFeaturesSection={toggleFeaturesSection}
           {...rest}
         />
       </div>
@@ -137,11 +164,13 @@ export default function UXLayoutBuilder({ ...rest }) {
           <div className={classes.content}>
             <div className={classes.container}>
               <UXBuilder
-                hero1={hero1}
-                hero2={hero2}
-                hero3={hero3}
                 navSelected={navSelected}
                 heroSelected={heroSelected}
+                heroSection={heroSection}
+                hiwSelected={hiwSelected}
+                hiwSection={hiwSection}
+                featuresSelected={featuresSelected}
+                featuresSection={featuresSection}
               />
             </div>
           </div>

@@ -36,18 +36,10 @@ const useStyles = makeStyles(styles);
 export default function Sidebar(props) {
   const classes = useStyles();
 
-  const [state, setState] = React.useState({
-    heroA: true,
-    howItWorksB: true,
-    featuresC: true,
-    testimonialsD: false,
-    portfolioE: false,
-    loginF: false,
-    teamG: false,
-    pricingH: false,
-    contactI: false,
-    footerJ: false,
-  });
+  const [heroExpansionPanel, setHeroExpansion] = React.useState(false);
+  const heroExpansionToggle = () => {
+    setHeroExpansion(!heroExpansionPanel);
+  };
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
@@ -68,11 +60,13 @@ export default function Sidebar(props) {
     logo,
     image,
     logoText,
-    hero1,
-    hero2,
-    hero3,
     navSelected,
     heroSelected,
+    heroSection,
+    hiwSelected,
+    hiwSection,
+    featuresSelected,
+    featuresSection,
   } = props;
 
   var brand = (
@@ -98,11 +92,6 @@ export default function Sidebar(props) {
         padding: 20,
       }}
     >
-      <Button type="button" href="/" fullWidth="true" color="info">
-        <ArrowBackIcon />
-        Back to Dashboard
-      </Button>
-
       <h3>Select...</h3>
 
       <ExpansionPanel
@@ -118,7 +107,7 @@ export default function Sidebar(props) {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <FormControl style={{ width: "100%" }} id={navSelected}>
-            <InputLabel id="nav-select-label">-----</InputLabel>
+            <InputLabel id="nav-select-label">Navigation Layout:</InputLabel>
             <Select
               labelId="nav-select-label"
               id="nav-select"
@@ -134,57 +123,58 @@ export default function Sidebar(props) {
           </FormControl>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+
       <ExpansionPanel
         expanded={expanded === "panel2"}
         onChange={handleExpansionChange("panel2")}
       >
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
+          aria-controls="panel2-content"
+          id="panel2-header"
         >
           <Typography>2. Page Sections</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
             <FormControlLabel
-              label="(A) Hero"
+              label="(a) Hero"
               control={
                 <Checkbox
-                  checked={state.heroA}
-                  onChange={handleChange}
+                  checked={props.heroSection}
+                  onChange={props.toggleHeroSection}
                   name="heroA"
                   color="secondary"
                 />
               }
             />
             <FormControlLabel
-              label="(B) How it Works"
+              label="(b) How It Works"
               control={
                 <Checkbox
-                  checked={state.howItWorksB}
-                  onChange={handleChange}
+                  checked={props.hiwSection}
+                  onChange={props.toggleHIWSection}
                   name="howItWorksB"
                   color="secondary"
                 />
               }
             />
             <FormControlLabel
-              label="(C) Features"
+              label="(c) Features"
               control={
                 <Checkbox
-                  checked={state.featuresC}
-                  onChange={handleChange}
+                  checked={props.featuresSection}
+                  onChange={props.toggleFeaturesSection}
                   name="featuresC"
                   color="secondary"
                 />
               }
             />
-            <FormControlLabel
-              label="(D) Testimonials"
+            {/* <FormControlLabel
+              label="(d) Testimonials"
               control={
                 <Checkbox
-                  checked={state.testimonialsD}
+                  checked="false"
                   onChange={handleChange}
                   name="testimonialsD"
                   color="secondary"
@@ -192,10 +182,10 @@ export default function Sidebar(props) {
               }
             />
             <FormControlLabel
-              label="(E) Portfolio"
+              label="(e) Portfolio"
               control={
                 <Checkbox
-                  checked={state.portfolioE}
+                  checked="false"
                   onChange={handleChange}
                   name="portfolioE"
                   color="secondary"
@@ -203,10 +193,10 @@ export default function Sidebar(props) {
               }
             />
             <FormControlLabel
-              label="(F) Login"
+              label="(f) Login"
               control={
                 <Checkbox
-                  checked={state.loginF}
+                  checked="false"
                   onChange={handleChange}
                   name="loginF"
                   color="secondary"
@@ -214,10 +204,10 @@ export default function Sidebar(props) {
               }
             />
             <FormControlLabel
-              label="(G) Team"
+              label="(g) Team"
               control={
                 <Checkbox
-                  checked={state.teamG}
+                  checked="false"
                   onChange={handleChange}
                   name="teamG"
                   color="secondary"
@@ -225,10 +215,10 @@ export default function Sidebar(props) {
               }
             />
             <FormControlLabel
-              label="(H) Pricing"
+              label="(h) Pricing"
               control={
                 <Checkbox
-                  checked={state.pricingH}
+                  checked="false"
                   onChange={handleChange}
                   name="pricingH"
                   color="secondary"
@@ -236,10 +226,10 @@ export default function Sidebar(props) {
               }
             />
             <FormControlLabel
-              label="(I) Contact"
+              label="(i) Contact"
               control={
                 <Checkbox
-                  checked={state.contactI}
+                  checked="false"
                   onChange={handleChange}
                   name="contactI"
                   color="secondary"
@@ -247,48 +237,17 @@ export default function Sidebar(props) {
               }
             />
             <FormControlLabel
-              label="(J) Footer"
+              label="(j) Footer"
               control={
                 <Checkbox
-                  checked={state.footerJ}
+                  checked="false"
                   onChange={handleChange}
                   name="footerJ"
                   color="secondary"
                 />
               }
-            />
+            /> */}
           </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-
-      <ExpansionPanel
-        expanded={expanded === "panel2.a"}
-        onChange={handleExpansionChange("panel2.a")}
-      >
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2.abh-content"
-          id="panel2.abh-header"
-        >
-          <Typography>2a. Hero</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <FormControl style={{ width: "100%" }} id={heroSelected}>
-            <InputLabel id="hero-select-label">-----</InputLabel>
-            <Select
-              labelId="hero-select-label"
-              id="hero-select"
-              value={heroSelected}
-              onChange={props.selectHero}
-            >
-              <MenuItem value="None">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={1}>Hero 1</MenuItem>
-              <MenuItem value={2}>Hero 2</MenuItem>
-              <MenuItem value={3}>Hero 3</MenuItem>
-            </Select>
-          </FormControl>
         </ExpansionPanelDetails>
       </ExpansionPanel>
 
@@ -303,11 +262,79 @@ export default function Sidebar(props) {
         >
           <Typography>3. Section Layouts</Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {heroSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={heroSelected}
+            >
+              <InputLabel id="hero-select-label">Hero Layouts:</InputLabel>
+              <Select
+                labelId="hero-select-label"
+                id="hero-select"
+                value={heroSelected}
+                onChange={props.selectHero}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Hero 1</MenuItem>
+                <MenuItem value={2}>Hero 2</MenuItem>
+                <MenuItem value={3}>Hero 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {hiwSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={hiwSelected}
+            >
+              <InputLabel id="hiw-select-label">HIW Layouts:</InputLabel>
+              <Select
+                labelId="hiw-select-label"
+                id="hiw-select"
+                value={hiwSelected}
+                onChange={props.selectHIW}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>How It Works 1</MenuItem>
+                <MenuItem value={2}>How It Works 2</MenuItem>
+                <MenuItem value={3}>How It Works 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </ExpansionPanelDetails>
+
+        <ExpansionPanelDetails style={{ paddingTop: 0 }}>
+          {featuresSection && (
+            <FormControl
+              style={{ width: "100%", paddingTop: 0 }}
+              id={featuresSelected}
+            >
+              <InputLabel id="features-select-label">
+                Features Layouts:
+              </InputLabel>
+              <Select
+                labelId="features-select-label"
+                id="features-select"
+                value={featuresSelected}
+                onChange={props.selectFeatures}
+              >
+                <MenuItem value={0}>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={1}>Features 1</MenuItem>
+                <MenuItem value={2}>Features 2</MenuItem>
+                <MenuItem value={3}>Features 3</MenuItem>
+              </Select>
+            </FormControl>
+          )}
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
@@ -346,6 +373,17 @@ export default function Sidebar(props) {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+
+      <Button
+        type="button"
+        href="/"
+        fullWidth="true"
+        color="info"
+        className="mt-5"
+      >
+        <ArrowBackIcon />
+        Back to Dashboard
+      </Button>
     </div>
   );
 

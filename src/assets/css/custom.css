@@ -19,6 +19,9 @@
 
 /* Tablet CSS */
 @media screen and (min-width: 600px) {
+  #toolbar {
+    display: none;
+  }
 }
 
 /* Laptop CSS */

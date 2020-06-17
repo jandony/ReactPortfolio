@@ -21,9 +21,30 @@ import Paper from "@material-ui/core/Paper";
 // Custom components
 
 // Hero components
+import Hero0 from "../../components/Hero/Hero0";
 import Hero1 from "../../components/Hero/Hero1";
 import Hero2 from "../../components/Hero/Hero2";
 import Hero3 from "../../components/Hero/Hero3";
+
+// How It Works components
+import HowItWorks0 from "../../components/HowItWorks/HowItWorks0";
+import HowItWorks1 from "../../components/HowItWorks/HowItWorks1";
+import HowItWorks2 from "../../components/HowItWorks/HowItWorks2";
+import HowItWorks3 from "../../components/HowItWorks/HowItWorks3";
+
+// Features components
+import Features0 from "../../components/Features/Features0";
+import Features1 from "../../components/Features/Features1";
+import Features2 from "../../components/Features/Features2";
+import Features3 from "../../components/Features/Features3";
+
+// Testimonials components
+// Portfolio components
+// Login components
+// Team components
+// Pricing components
+// Contact components
+// Footer components
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -93,6 +114,8 @@ const Nav1 = (props) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  console.log(props);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -172,7 +195,7 @@ const Nav1 = (props) => {
   );
 
   return (
-    <Paper style={{ height: "100vh" }}>
+    <Paper style={{ minHeight: "100vh", marginBottom: "50px" }}>
       <div className={classes.grow}>
         <AppBar position="static" style={{ backgroundColor: "#555" }}>
           <Toolbar>
@@ -242,9 +265,38 @@ const Nav1 = (props) => {
         {renderMobileMenu}
         {renderMenu}
       </div>
-      {props.heroSelected === 1 && <Hero1 />}
-      {props.heroSelected === 2 && <Hero2 />}
-      {props.heroSelected === 3 && <Hero3 />}
+
+      {/* DOM => Hero Layouts */}
+      {props.heroSection && props.heroSelected === 0 && <Hero0 />}
+      {props.heroSection && props.heroSelected === 1 && <Hero1 />}
+      {props.heroSection && props.heroSelected === 2 && <Hero2 />}
+      {props.heroSection && props.heroSelected === 3 && <Hero3 />}
+      <br />
+      {/* DOM => How It Works Layouts */}
+      {props.hiwSection && props.hiwSelected === 0 && <HowItWorks0 />}
+      {props.hiwSection && props.hiwSelected === 1 && <HowItWorks1 />}
+      {props.hiwSection && props.hiwSelected === 2 && <HowItWorks2 />}
+      {props.hiwSection && props.hiwSelected === 3 && <HowItWorks3 />}
+      <br />
+      {/* DOM => Features Layouts */}
+      {props.featuresSection && props.featuresSelected === 0 && <Features0 />}
+      {props.featuresSection && props.featuresSelected === 1 && <Features1 />}
+      {props.featuresSection && props.featuresSelected === 2 && <Features2 />}
+      {props.featuresSection && props.featuresSelected === 3 && <Features3 />}
+      <br />
+      {/* DOM => Testimonials Layouts */}
+      <br />
+      {/* DOM => Portfolio Layouts */}
+      <br />
+      {/* DOM => Login Layouts */}
+      <br />
+      {/* DOM => Team Layouts */}
+      <br />
+      {/* DOM => Pricing Layouts */}
+      <br />
+      {/* DOM => Contact Layouts */}
+      <br />
+      {/* DOM => Footer Layouts */}
     </Paper>
   );
 };
