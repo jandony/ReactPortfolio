@@ -1,12 +1,24 @@
 import React, { Component } from "react";
+
 // important components
 import Counters from "../../components/Counters/counters";
 import NavBar from "../../components/Navbars/TutorialsNavBar";
 import FixedTabs from "../../components/FixedTabs/FixedTabs";
+import RickandMortyAPI from "../../components/RickandMorty/RickandMorty";
 
 class Tutorials extends Component {
   state = {
-    counters: [{ id: 2, value: 4 }, { id: 1, value: 0 }, { id: 3, value: 0 }],
+    counters: [{
+      id: 2,
+      value: 4
+    }, {
+      id: 1,
+      value: 0
+    }, {
+      id: 3,
+      value: 0
+    }
+    ],
     totalBoxes: 3,
   };
 
@@ -39,6 +51,8 @@ class Tutorials extends Component {
         />
         <h2>Tutorial: Tabs</h2>
         <FixedTabs />
+        <h2 className="mt-5">Tutorial: Rick and Morty API</h2>
+        <RickandMortyAPI />
       </React.Fragment>
     );
   }
@@ -85,14 +99,6 @@ class Tutorials extends Component {
     console.log(counters);
     console.log("Total Boxes: ", totalBoxes);
   };
-
-  //   handleSort = () => {
-  //     const counters = [...this.state.counters];
-  //     counters.sort(function(a, b) {
-  //       if (b.id < a.id) return -1;
-  //     });
-  //     this.setState({ counters });
-  //   };
 
   // -- End of Lifted State Functions -- //
 }
