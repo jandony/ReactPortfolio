@@ -81,7 +81,7 @@ const RickandMortyAPI = () => {
       `;
     });
 
-    console.log(characters);
+    // console.log(characters);
   }
 
   return (

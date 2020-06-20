@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 
-// important components
+// Icon components
+import InfoIcon from '@material-ui/icons/Info';
+
+// Material UI components
+import Button from '@material-ui/core/Button';
+
+// Custom components
 import Counters from "../../components/Counters/counters";
 import NavBar from "../../components/Navbars/TutorialsNavBar";
 import FixedTabs from "../../components/FixedTabs/FixedTabs";
 import RickandMortyAPI from "../../components/RickandMorty/RickandMorty";
 
 class Tutorials extends Component {
+
   state = {
     counters: [{
       id: 2,
@@ -20,15 +27,16 @@ class Tutorials extends Component {
     }
     ],
     totalBoxes: 3,
+    isOpen: false
   };
-
-  constructor() {
-    super();
-    console.log("App - Constructor");
-  }
 
   componentDidMount() {
     console.log("App - Mounted");
+  }
+
+  handleClickOpen() {
+    console.log("Read More button clicked...");
+    console.log(this.state.isOpen)
   }
 
   render() {
@@ -36,7 +44,17 @@ class Tutorials extends Component {
 
     return (
       <React.Fragment>
-        <h2>Tutorial: React Basics</h2>
+        <h2>Tutorial: React Basics
+          <Button
+            variant="outlined"
+            color="primary"
+            size="small"
+            style={{ marginLeft: "15px" }}
+            onClick={this.handleClickOpen}
+          >
+            <InfoIcon style={{ marginRight: "5px" }} />
+            Read more
+          </Button></h2>
         <NavBar
           totalCounters={this.state.counters.filter((c) => c.value > 0).length}
         />
