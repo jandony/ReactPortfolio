@@ -52,18 +52,25 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/layout-build",
-    name: "UX Layout Builder",
-    icon: AspectRatioIcon,
-    component: UXLayoutBuilder,
-    layout: "/ux",
-  },
-  {
     path: "/tutorials",
     name: "Tutorials",
     icon: CollectionsBookmarkIcon,
     component: Tutorials,
     layout: "/admin",
+  },
+  {
+    path: "/wp-blog",
+    name: "WP Blog",
+    icon: Forum,
+    component: WPBlog,
+    layout: "/admin",
+  },
+  {
+    path: "/layout-build",
+    name: "UX Layout Builder",
+    icon: AspectRatioIcon,
+    component: UXLayoutBuilder,
+    layout: "/ux",
   },
   {
     path: "/user",
@@ -135,13 +142,6 @@ const dashboardRoutes = [
     component: AllUsers,
     layout: "/admin",
     invisible: true,
-  },
-  {
-    path: "/wp-blog",
-    name: "WP Blog",
-    icon: Forum,
-    component: WPBlog,
-    layout: "/admin",
   },
 ];
 
