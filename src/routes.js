@@ -72,6 +72,7 @@ const dashboardRoutes = [
     icon: Person,
     component: UserProfile,
     layout: "/admin",
+    invisible: true,
   },
   {
     path: "/table",
@@ -80,6 +81,7 @@ const dashboardRoutes = [
     icon: "content_paste",
     component: TableList,
     layout: "/admin",
+    invisible: true,
   },
   {
     path: "/typography",
@@ -88,6 +90,7 @@ const dashboardRoutes = [
     icon: LibraryBooks,
     component: Typography,
     layout: "/admin",
+    invisible: true,
   },
   {
     path: "/icons",
@@ -96,6 +99,7 @@ const dashboardRoutes = [
     icon: BubbleChart,
     component: Icons,
     layout: "/admin",
+    invisible: true,
   },
   {
     path: "/maps",
@@ -104,6 +108,7 @@ const dashboardRoutes = [
     icon: LocationOn,
     component: Maps,
     layout: "/admin",
+    invisible: true,
   },
   {
     path: "/notifications",
@@ -112,6 +117,7 @@ const dashboardRoutes = [
     icon: Notifications,
     component: NotificationsPage,
     layout: "/admin",
+    invisible: true,
   },
   {
     path: "/rtl-page",
@@ -128,6 +134,7 @@ const dashboardRoutes = [
     icon: People,
     component: AllUsers,
     layout: "/admin",
+    invisible: true,
   },
   {
     path: "/wp-blog",
